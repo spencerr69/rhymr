@@ -87,24 +87,15 @@ const TextEditor = () => {
       ];
       const replace = replacements.filter((item) => item.word === word)[0];
       return replace ? replace.syl : syl.countSyllables(word);
-      // if (replacements)) return syl.countSyllables(word);
-   };
-
-   const updateLineNumbers = () => {
-      editorRef.current?.updateOptions({
-         lineNumbers: calculateSyllables,
-      });
    };
 
    return (
       <Editor
-         // height={'100vh'}
          defaultLanguage="rhymdown"
          defaultValue="// some comment"
          theme="myCoolTheme"
          onMount={handleEditorDidMount}
          beforeMount={handleEditorWillMount}
-         onChange={updateLineNumbers}
       />
    );
 };
